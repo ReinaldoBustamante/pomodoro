@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    background-color: #F5EFE6;
+    font-size: 1.6rem;
+}
+
+.new-tarea{
+    background-color: #E8DFCA;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    align-items: center;
+    color: #7895B2;
+    gap: 6px;
+    padding: 12px;
+    border-radius: 8px;
+}
+.agregar{
+    padding: 8px;
+    margin-top: 8px;
+    background-color: #7895B2;
+    border: none;
+    color: #F5EFE6;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.input{
+    width: 100%;
+    padding: 6px;
+    border: none;
+    border-radius: 8px;  
+    color: #7895B2; 
+}
+.input:focus{
+    border: none;
+    color: #7895B2;
+}
+.time{
+    font-size: 6rem;
+}
+.list-tarea{
+    margin-top: 40px;
+    background-color: #E8DFCA;
+    width: 700px;
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+}
+.tareaProgres{
+    width: 80%;
+    text-align: center;
+    color: #7895B2;
+}
+.opt{
+    width: 20%;
+    display: flex;
+    gap: 10px;
+}
+.opt button{
+    width: 80px;
+    border: none;
+    background-color: #7895B2;
+    color: #F5EFE6;
+    border-radius: 4px;
+}
+.inactive{
+    display: none;
+}
+.disable{
+    background-color: gray;
+    color: #F5EFE6;
+}

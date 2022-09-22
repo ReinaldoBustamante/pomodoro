@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section class="new-tarea">
+            <h1 class="time">0:00</h1>
+            <p class="tarea"></p>
+            <input type="text" placeholder="Ingresar tarea" class="input">
+            <button class="agregar">Agregar tarea</button>
+        </section>
+        <section class="list-tarea inactive">
+            <h2 class="tareaProgres"></h2>
+            <div class="opt">
+                <button class="pausar">pausar</button>
+                <button class="eliminar">eliminar</button>
+            </div>
+        </section>
+    </main>
+</body>
+<script src="index.js"></script>
+</html>
