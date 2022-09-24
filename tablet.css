@@ -1,0 +1,15 @@
+.new-tarea{
+    min-width: 640px;
+}
+.list-tarea{
+    min-width: 640px;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.opt{
+    flex-direction: row;
+    width: 20%;
+}
+.tareaProgres{
+    width: 80%;
+}

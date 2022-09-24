@@ -4,15 +4,16 @@ const agregarTarea = () =>{
         alert('Agrega una tarea')
     }
     else{
+        cronometrar = true;
         tareas = [...tareas, input.value]
         tareaProgres.textContent = tareas.slice(-1)
         listTarea.classList.toggle('inactive')
-        let tiempoRef = Date.now()
-        let acomulado = 0
-        let ms = 0;
-        let St = 0
-        let s = 0
-        let m = 0
+        tiempoRef = Date.now()
+        acomulado = 0
+        ms = 0;
+        St = 0
+        s = 0
+        m = 0
         let sound = new Audio('./sound.mp3')
         setInterval(()=>{
             if(cronometrar){
@@ -51,18 +52,40 @@ const eliminarTarea = () => {
     tiempo.textContent = "0:00"
 }
 
+const pausarCronometro = () => {
+    if (cronometrar){
+        cronometrar = false;
+        pausar.textContent = "Resumir";
+        
+    } else{
+        cronometrar = true;
+        tiempoRef = Date.now()
+        pausar.textContent = "Pausar";
+        
+        
+    }
+}
+
 
 let tareas = []
-let cronometrar = true;
+let cronometrar;
+let timePaused;
+let tiempoRef;
+let acomulado;
+let ms;
+let St;
+let s;
+let m;
 const input = document.querySelector('.input')
 const agregar = document.querySelector('.agregar')
 const listTarea = document.querySelector('.list-tarea')
 const tareaProgres = document.querySelector('.tareaProgres')
 const eliminar = document.querySelector('.eliminar')
 const tiempo = document.querySelector('.time')
+const pausar = document.querySelector('.pausar')
 
 
 agregar.addEventListener('click', agregarTarea);
 eliminar.addEventListener('click', eliminarTarea);
-
+pausar.addEventListener('click', pausarCronometro);
 
