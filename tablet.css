@@ -9,7 +9,11 @@
 .opt{
     flex-direction: row;
     width: 20%;
+ 
 }
 .tareaProgres{
-    width: 80%;
+    width: 100%;
+}
+.tareas-completadas{
+    min-width: 640px;
 }

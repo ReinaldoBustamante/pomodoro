@@ -6,7 +6,7 @@ const agregarTarea = () =>{
     else{
         cronometrar = true;
         tareas = [...tareas, input.value]
-        tareaProgres.textContent = tareas.slice(-1)
+        tareaProgres.textContent = `${tareas.slice(-1)}`
         listTarea.classList.toggle('inactive')
         tiempoRef = Date.now()
         acomulado = 0
@@ -28,12 +28,18 @@ const agregarTarea = () =>{
                 } else{
                     tiempo.textContent = `${m}:${s}`
                 } 
-                if(m==1){
+                if(m==25){
                     cronometrar = false;
                     sound.play();
-                    tiempo.textContent = "0:00"
-                    listTarea.classList.toggle('inactive')
-                    agregar.classList.toggle('disable')
+                    tareasCompletadas = [...tareasCompletadas,...tareas]
+                    eliminarTarea();
+                    const newElement = document.createElement('div');
+                    newElement.classList.add('tarea');
+                    newElement.textContent = tareasCompletadas.slice(-1);
+                    tareasC.appendChild(newElement);
+                    if(tareasC.classList.contains('inactive')){
+                        tareasC.classList.toggle('inactive')
+                    }
                 }
             }
         }, 1000/60)
@@ -69,8 +75,14 @@ const pausarCronometro = () => {
     }
 }
 
+const enter = (e) =>{
+    if(e.keyCode === 13){
+        agregarTarea()
+    }
+}
 
 let tareas = []
+let tareasCompletadas = []
 let cronometrar;
 let timePaused;
 let tiempoRef;
@@ -86,9 +98,9 @@ const tareaProgres = document.querySelector('.tareaProgres')
 const eliminar = document.querySelector('.eliminar')
 const tiempo = document.querySelector('.time')
 const pausar = document.querySelector('.pausar')
-
+const tareasC = document.querySelector('.tareas-completadas');
 
 agregar.addEventListener('click', agregarTarea);
 eliminar.addEventListener('click', eliminarTarea);
 pausar.addEventListener('click', pausarCronometro);
-
+input.addEventListener('keyup', enter);
