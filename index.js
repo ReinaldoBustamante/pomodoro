@@ -31,6 +31,9 @@ const agregarTarea = () =>{
                 if(m==1){
                     cronometrar = false;
                     sound.play();
+                    tiempo.textContent = "0:00"
+                    listTarea.classList.toggle('inactive')
+                    agregar.classList.toggle('disable')
                 }
             }
         }, 1000/60)
