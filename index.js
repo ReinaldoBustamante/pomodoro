@@ -28,7 +28,7 @@ const agregarTarea = () =>{
                 } else{
                     tiempo.textContent = `${m}:${s}`
                 } 
-                if(m==25){
+                if(m==1){
                     cronometrar = false;
                     sound.play();
                 }
