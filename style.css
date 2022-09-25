@@ -113,3 +113,23 @@ body{
 .inactive{
     display: none;
 }
+.ciclos{
+    margin-top: 40px;
+    background-color: #E8DFCA;
+    width: 300px;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    color: #7895B2;
+    height: 100px;
+}
+.ciclos h1{
+    font-size: 3rem;
+}
+.ciclo{
+    font-size: 4rem;
+    font-weight: 700;
+   
+}

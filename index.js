@@ -28,7 +28,7 @@ const agregarTarea = () =>{
                 } else{
                     tiempo.textContent = `${m}:${s}`
                 } 
-                if(m==25){
+                if(m==20){
                     cronometrar = false;
                     sound.play();
                     tareasCompletadas = [...tareasCompletadas,...tareas]
@@ -37,6 +37,8 @@ const agregarTarea = () =>{
                     newElement.classList.add('tarea');
                     newElement.textContent = tareasCompletadas.slice(-1);
                     tareasC.appendChild(newElement);
+                    ciclos += 1;
+                    ciclo.textContent = ciclos
                     if(tareasC.classList.contains('inactive')){
                         tareasC.classList.toggle('inactive')
                     }
@@ -87,6 +89,7 @@ let cronometrar;
 let timePaused;
 let tiempoRef;
 let acomulado;
+let ciclos = 0;
 let ms;
 let St;
 let s;
@@ -99,6 +102,7 @@ const eliminar = document.querySelector('.eliminar')
 const tiempo = document.querySelector('.time')
 const pausar = document.querySelector('.pausar')
 const tareasC = document.querySelector('.tareas-completadas');
+const ciclo = document.querySelector('.ciclo')
 
 agregar.addEventListener('click', agregarTarea);
 eliminar.addEventListener('click', eliminarTarea);
